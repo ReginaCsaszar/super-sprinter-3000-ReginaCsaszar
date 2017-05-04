@@ -3,10 +3,13 @@
   <head>
     <title>Super Sprinter 3000</title>
     <link rel="stylesheet" href="../static/style.css">
+    <!-- This is the main site, displays the user stories table and
+    redirects to list.html to add new entry -->
   </head>
   <body>
       <h1>User Story Manager</h1>
-         <p><input type="submit" value="Add new User Story"></p>
+         <p><form action="/story"><input type="submit" value="Add new User Story"></p>
+      {% if data %}
       <table>
         <tr>
             <th>ID</th>
@@ -17,24 +20,22 @@
             <th>Estimation</th>
             <th>Status</th>
         </tr>
+        {% for field in data %}
         <tr>
-            <td>The id will be here</td>
-            <td>The content will be here</td>
-            <td>The content will be here</td>
-            <td>The content will be here</td>
-            <td>The content will be here</td>
-            <td>The content will be here</td>
-            <td>The content will be here</td>
+            <td>{{ field[0] }}</td>
+            <td>{{ field[1] }}</td>
+            <td>{{ field[2] }}</td>
+            <td>{{ field[3] }}</td>
+            <td>{{ field[4] }}</td>
+            <td>{{ field[5] }}</td>
+            <td>{{ field[6] }}</td>
+            <td>
+                <a href="/story/{{ field[0] }}"><img src="../static/pen.jpg" width="20" height="20" alt="Edit"></a>
+                <a href="/delete"><img src="../static/bin.jpg" width="20" height="20" alt="Delete"></a>
+            </td>
         </tr>
-         <tr>
-            <td>Another id will be here</td>
-            <td>Another content will be here</td>
-            <td>Another content will be here</td>
-            <td>Another content will be here</td>
-            <td>Another content will be here</td>
-            <td>Another content will be here</td>
-            <td>Another content will be here</td>
-        </tr>
+        {% endfor %}
     </table>
+    {% endif %}
   </body>
 </html>
