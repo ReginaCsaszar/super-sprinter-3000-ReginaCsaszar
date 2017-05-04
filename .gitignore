@@ -24,3 +24,7 @@ var/
 # Flask stuff:
 instance/
 .webassets-cache
+
+# To avoid redundance
+
+*.csv
