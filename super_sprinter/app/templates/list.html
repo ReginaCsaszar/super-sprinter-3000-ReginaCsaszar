@@ -3,7 +3,8 @@
   <head>
     <title>Super Sprinter 3000</title>
     <link rel="stylesheet" href="../static/style.css">
-    <!-- This is the main site, displays the user stories table and
+    <!-- This is the main site, displays the user stories table,
+    send selected id back to views.py for deleting and modify,
     redirects to list.html to add new entry -->
   </head>
   <body>
@@ -31,7 +32,7 @@
             <td>{{ field[6] }}</td>
             <td>
                 <a href="/story/{{ field[0] }}"><img src="../static/pen.jpg" width="20" height="20" alt="Edit"></a>
-                <a href="/delete"><img src="../static/bin.jpg" width="20" height="20" alt="Delete"></a>
+                <a href="/delete/{{ field[0] }}"><img src="../static/bin.jpg" width="20" height="20" alt="Delete"></a>
             </td>
         </tr>
         {% endfor %}
