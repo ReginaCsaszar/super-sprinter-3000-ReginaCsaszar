@@ -18,8 +18,11 @@ def write_table_to_file(table):
 
 
 def main():
-    story = [["1", "Create", "Add new items", "If added items stored and can call back", "800", "13.5", "Planning"],
-             ["3", "Modify", "Modify existing items", "If modified item stored, without lost", "300", "30", "Review"],
+    story = [["1", "Cats", "Nowhere", "Must have 2 at least", "800", "13.5", "Planning"],
+             ["2", "Programming issues", "It is not possible to guess random and meaningless variables",
+              "Cats are needed for random generating. At least one cat/person.", "300", "30", "Review"],
+             ["3", "Cat feeding", "They are totally idiots", "4 times. Do you understand? Give me food 4 times a day.",
+              "1500", "0.5", "TODO"]
              ]
     write_table_to_file(story)
 
