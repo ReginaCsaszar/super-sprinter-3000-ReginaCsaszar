@@ -68,3 +68,9 @@ def delete(ident):
         row[0] = str(index+1)
     data_manager.write_table_to_file(data)
     return redirect("/list")
+
+
+@app.route('/cat')
+def cat():
+    """Contents for cat page"""
+    return render_template("cat.html")
