@@ -14,26 +14,18 @@
          </p>
       <table>
         <tr>
-            <th>ID</th>
-            <th>Story Title</th>
-            <th>User Story</th>
-            <th>Acceptance Criteria</th>
-            <th>Business Value</th>
-            <th>Estimation</th>
-            <th>Status</th>
+            {% for title in ["ID", "Story Title", "User Story", "Acceptance Criteria", "Business Value", "Estimation", "Status"] %}
+            <th>{{ title }}</th>
+            {% endfor %}
         </tr>
-        {% for field in data %}
+        {% for row in data %}
         <tr>
-            <td>{{ field[0] }}</td>
-            <td>{{ field[1] }}</td>
-            <td>{{ field[2] }}</td>
-            <td>{{ field[3] }}</td>
-            <td>{{ field[4] }}</td>
-            <td>{{ field[5] }}</td>
-            <td>{{ field[6] }}</td>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
             <td>
-                <a href="/story/{{ field[0] }}"><img src="../static/pen.jpg" width="20" height="20" alt="Edit"></a>
-                <a href="/delete/{{ field[0] }}"><img src="../static/bin.jpg" width="20" height="20" alt="Delete"></a>
+              <a href="/story/{{ row[0] }}"><img src="../static/pen.jpg" width="20" height="20" alt="Edit"></a>
+              <a href="/delete/{{ row[0] }}"><img src="../static/bin.jpg" width="20" height="20" alt="Delete"></a>
             </td>
         </tr>
         {% endfor %}
