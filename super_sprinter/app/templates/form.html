@@ -24,16 +24,17 @@
           <input type="number" min="0.5" max="40" step="0.5" id="estimation" name="estimation" value="{{ data[5] }}" required>
         </p><p>
           <label for="status">Status</label><br>
-          <select id="status" name="status" required>
-            <option value="Planning">Planning</option>
-            <option value="TODO">TODO</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Review">Review</option>
-            <option value="Done">Done</option>
-          </select>
-        </p><p>
-          <input type="submit" value="{{ title }}">
+          <input name="status" list="state" value="{{ data[6] }}" required>
+                <datalist id="state">
+                    <option>Planning</option>
+                    <option>TODO</option>
+                    <option>In Progress</option>
+                    <option>Review</option>
+                    <option>Done</option>
+                </datalist>
         </p>
+        <p><input type="submit" value="{{ title }}"></p>
       </form>
+      <p><form action="/list"><input type="submit" value="Back to lists"></form></p>
   </body>
 </html>

@@ -19,7 +19,7 @@ def write_table_to_file(table):
 
 def main():
     story = [["1", "Create", "Add new items", "If added items stored and can call back", "800", "13.5", "Planning"],
-             ["2", "Modify", "Modify existing items", "If modified item stored, without lost", "300", "30", "Review"],
+             ["3", "Modify", "Modify existing items", "If modified item stored, without lost", "300", "30", "Review"],
              ]
     write_table_to_file(story)
 
