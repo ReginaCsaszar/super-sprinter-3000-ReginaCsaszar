@@ -12,7 +12,6 @@
          <p>
           <form action="/story"><input type="submit" value="Add new User Story"></form>
          </p>
-      {% if data %}
       <table>
         <tr>
             <th>ID</th>
@@ -39,6 +38,8 @@
         </tr>
         {% endfor %}
     </table>
-    {% endif %}
+    <p>
+      <form action="/cat"><input type="submit" value="Cats!"></form>
+    </p>
   </body>
 </html>

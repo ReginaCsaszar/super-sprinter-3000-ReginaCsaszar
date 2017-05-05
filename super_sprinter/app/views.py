@@ -63,6 +63,7 @@ def delete(ident):
         if row[0] == str(ident):
             useless = row
     data.remove(useless)
+    # id reorder
     for index, row in enumerate(data):
         row[0] = str(index+1)
     data_manager.write_table_to_file(data)

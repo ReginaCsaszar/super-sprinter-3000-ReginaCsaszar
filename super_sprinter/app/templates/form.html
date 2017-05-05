@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Super Sprinter 3000 - {{ title }}</title>
     <!-- This is the form page, to create or modify user story list -->
   </head>
+
   <body>
+
       <h1>User Story manager - {{ title }}</h1>
+      
       <form action="{{ action }}" method="post">
+        
         <p>
           <label for="title">Story Title</label><br>
           <input name="title" id="title" value="{{ data[1] }}" required>
-        </p><p>
+        </p>
+        
+        <p>
           <label for="story">User Story</label><br>
           <textarea rows="5" cols="50" name="story" id="story">{{ data[2] }}</textarea>
-        </p><p>
+        </p>
+        
+        <p>
           <label for="criteria">Acceptance criteria</label><br>
           <textarea rows="6" cols="50" name="criteria" id="criteria">{{ data[3] }}</textarea>
-        </p><p>
+        </p>
+        
+        <p>
           <label for="value">Business Value</label><br>
           <input type="number" min="100" max="1500" step="100" id="value" name="value" value="{{ data[4] }}" required>
-        </p><p>
+        </p>
+        
+        <p>
           <label for="estimation">Estimation (h) </label><br>
           <input type="number" min="0.5" max="40" step="0.5" id="estimation" name="estimation" value="{{ data[5] }}" required>
-        </p><p>
+        </p>
+        
+        <p>          
           <label for="status">Status</label><br>
           <input name="status" list="state" value="{{ data[6] }}" required>
                 <datalist id="state">
@@ -33,8 +48,13 @@
                     <option>Done</option>
                 </datalist>
         </p>
+
         <p><input type="submit" value="{{ title }}"></p>
+      
       </form>
+
       <p><form action="/list"><input type="submit" value="Back to lists"></form></p>
+
   </body>
+
 </html>
