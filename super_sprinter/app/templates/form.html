@@ -40,7 +40,7 @@
         
         <p>          
           <label for="status">Status</label><br>
-          <input name="status" list="state" value="{{ data[6] }}" required>
+          <input name="status" id="status" list="state" value="{{ data[6] }}" required>
                 <datalist id="state">
                     <option>Planning</option>
                     <option>TODO</option>
@@ -50,11 +50,11 @@
                 </datalist>
         </p>
 
-        <p><input type="submit" value="{{ title }}"></p>
+        <p><input type="submit"  id="send" value="{{ title }}"></p>
       
       </form>
 
-      <p><form action="/list"><input type="submit" value="Back to lists"></form></p>
+      <p><form action="/list"><input type="submit"  id="back" value="Back to lists"></form></p>
 
   </body>
 
