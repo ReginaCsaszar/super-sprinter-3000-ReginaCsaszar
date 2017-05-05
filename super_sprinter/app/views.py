@@ -14,13 +14,13 @@ def list():
 
 @app.route('/story')
 def story():
-    """Contets for add new story page"""
+    """Contents for add new story page"""
     return render_template("form.html", title="Add new Story", data="", action="/new")
 
 
 @app.route('/story/<int:ident>', methods=["GET"])
 def modify(ident):
-    """Contets for modify existing story page"""
+    """Contents for modify existing story page"""
     story = data_manager.get_table_from_file()
     for row in story:
         if row[0] == str(ident):
@@ -45,11 +45,12 @@ def edit(ident):
     data = data_manager.get_table_from_file()
     for row in data:
         if row[0] == str(ident):
-            useless = row
-    data.remove(useless)
-    data.append([str(ident), request.form['title'], request.form['story'], request.form['criteria'],
-                 request.form['value'], request.form['estimation'], request.form['status']
-                 ])
+            row[1] = request.form['title']
+            row[2] = request.form['story']
+            row[3] = request.form['criteria']
+            row[4] = request.form['value']
+            row[5] = request.form['estimation']
+            row[6] = request.form['status']
     data_manager.write_table_to_file(data)
     return redirect("/list")
 
